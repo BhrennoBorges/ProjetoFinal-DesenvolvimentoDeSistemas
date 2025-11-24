@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>TechStore</title>
+</head>
+
+<body>
+    <!-- CABEÇALHO -->
+    <header>
+        <div class="logo">
+            <i class="fa-solid fa-bolt"></i>
+            <h1>TechStore</h1>
+        </div>
+        <div class="search-container">
+            <input placeholder="Buscar produtos..." class="search-input">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        <div id="user-area"></div>
+    </header>
+
+    <!-- MENU SUPERIOR -->
+    <div class="categories-container">
+        <nav class="categories-bar">
+
+
+            <button class="category-btn active" data-category="all">
+                <i class="fa-solid fa-border-all"></i>
+                Todos
+            </button>
+
+            <button class="category-btn" data-category="smartphones">
+                <i class="fa-solid fa-mobile-screen"></i>
+                SmartPhones
+            </button>
+
+            <button class="category-btn" data-category="laptops">
+                <i class="fa-solid fa-laptop"></i>
+                Notebooks
+            </button>
+
+            <button class="category-btn" data-category="headphones">
+                <i class="fa-solid fa-headphones-simple"></i>
+                Fones
+            </button>
+
+            <button class="category-btn" data-category="accessories">
+                <i class="fa-solid fa-keyboard"></i>
+                Periféricos
+            </button>
+
+            <button class="category-btn" data-category="smartwatch">
+                <i class="fa-solid fa-clock"></i>
+                SmartWatches
+            </button>  
+
+
+        </nav>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero-section">
+        <h2>Black Friday Antecipada!</h2>
+        <p>Até 50% de desconto em produtos selecionados</p>
+    </section>
+
+    <!-- ITENS -->
+    <main class="products">
+        <div class="products-container">
+
+            
+            
+       
+        </div>
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <p>2025 - TechStore. Todos os Direitos Reservados</p>
+    </footer>
+
+
+</body>
+
+<script src="auth.js"></script>
+<script>
+  Auth.init({
+    apiBase: "http://localhost:5159",
+    routes: { login: "/api/auth/login", register: "/api/auth/register" }
+  });
+</script>
+<script src="scripts.js"></script>
+
+
+
+</html>

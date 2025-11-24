@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pagamento — TechStore</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .checkout-grid {
+            display: grid;
+            grid-template-columns: 1fr 360px;
+            gap: 1rem;
+        }
+
+        @media (max-width: 980px) {
+            .checkout-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .sum-card {
+            border: 1px solid var(--border-color);
+            border-radius: .8rem;
+            background: #fff;
+            padding: 1rem;
+        }
+
+        .sum-row {
+            display: flex;
+            justify-content: space-between;
+            gap: .75rem;
+            margin: .25rem 0;
+        }
+
+        .sum-total {
+            font-weight: 800;
+            font-size: 1.05rem;
+            margin-top: .5rem;
+        }
+
+        .mini {
+            font-size: .9rem;
+            color: #6b7280;
+        }
+
+        .pix-box {
+            padding: .75rem;
+            border: 1px dashed var(--border-color);
+            border-radius: .6rem;
+            background: #fafafa;
+        }
+
+        .badge {
+            display: inline-flex;
+            gap: .4rem;
+            align-items: center;
+            border: 1px solid var(--border-color);
+            border-radius: .5rem;
+            padding: .25rem .5rem;
+            font-size: .85rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo"><i class="fa-solid fa-bolt"></i>
+            <h1>TechStore</h1>
+        </div>
+        <div id="user-area"></div>
+    </header>
+
+    <section class="auth-hero">
+        <h2>Finalizar compra</h2>
+        <p>Revise seus dados, escolha a forma de pagamento e conclua o pedido</p>
+    </section>
+
+    <main class="auth-shell">
+        <div class="checkout-grid">
+            <!-- Coluna esquerda: endereço + pagamento -->
+            <div class="auth-card">
+                <h3 class="auth-title">Endereço de entrega</h3>
+                <div id="addrBox" class="grid" style="margin-bottom:1rem;">
+                    <div class="empty">Carregando seus endereços...</div>
+                </div>
+                <input type="hidden" id="endId">
+
+                <h3 class="auth-title" style="margin-top:1rem;">Pagamento</h3>
+
+                <form id="payForm" class="grid">
+                    <div class="full" style="display:flex; gap:.5rem; flex-wrap:wrap;">
+                        <label class="badge"><input type="radio" name="metodo" value="pix" checked> Pix</label>
+                        <label class="badge"><input type="radio" name="metodo" value="cartao"> Cartão de crédito</label>
+                    </div>
+
+                    <!-- PIX -->
+                    <div id="pixFields" class="full">
+                        <div class="pix-box">
+                            <p class="mini">Pague com Pix. Geraremos o código na finalização.</p>
+                            <div id="pixReturn" class="mini" style="margin-top:.5rem;"></div>
+                        </div>
+                    </div>
+
+                    <!-- CARTÃO -->
+                    <div id="cardFields" class="full" style="display:none;">
+                        <div class="grid">
+                            <div class="auth-field full">
+                                <label>Nome impresso</label>
+                                <input
+                                    id="ccNome"
+                                    name="ccNome"
+                                    type="text"
+                                    autocomplete="cc-name"
+                                    required>
+                            </div>
+
+                            <div class="auth-field full">
+                                <label>Número do cartão</label>
+                                <input
+                                    id="ccNum"
+                                    name="ccNum"
+                                    type="text"
+                                    inputmode="numeric"
+                                    autocomplete="cc-number"
+                                    maxlength="19"
+                                    pattern="\d{13,19}"
+                                    required>
+                            </div>
+
+                            <div class="auth-field">
+                                <label>Validade (MM/AA)</label>
+                                <input
+                                    id="ccVal"
+                                    name="ccVal"
+                                    type="text"
+                                    inputmode="numeric"
+                                    placeholder="MM/AA"
+                                    maxlength="5"
+                                    pattern="\d{2}\/\d{2}"
+                                    autocomplete="cc-exp"
+                                    required>
+                            </div>
+
+                            <div class="auth-field">
+                                <label>CVV</label>
+                                <input
+                                    id="ccCvv"
+                                    name="ccCvv"
+                                    type="text"
+                                    inputmode="numeric"
+                                    maxlength="4"
+                                    pattern="\d{3,4}"
+                                    autocomplete="cc-csc"
+                                    required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="auth-actions full">
+                        <button class="auth-btn" type="submit" id="btnPagar">Concluir pagamento</button>
+                        <a class="btn-ghost btn-ghost--danger" href="index.html">Voltar à loja</a>
+                    </div>
+                    <div id="payMsg" class="mini full"></div>
+                </form>
+            </div>
+
+            <!-- Coluna direita: resumo -->
+            <aside class="sum-card">
+                <h3 class="auth-title">Resumo do pedido</h3>
+                <div id="cartResume"></div>
+                <hr style="margin:.75rem 0;">
+                <div class="sum-row sum-total">
+                    <span>Total</span>
+                    <strong>R$ <span id="sumTotal">0,00</span></strong>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <p>2025 - TechStore. Todos os Direitos Reservados</p>
+    </footer>
+
+    <script src="auth.js"></script>
+    <script>
+        Auth.init({
+            apiBase: "http://localhost:5159",
+            routes: { login: "/api/auth/login", register: "/api/auth/register" }
+        });
+    </script>
+    <script src="scripts.js"></script>
+    <script>
+        // ===== Protege a rota =====
+        if (!isLogged()) { window.location.href = "login.html"; }
+
+        // monta header (ícone/usuário) e badge do carrinho
+        document.addEventListener("DOMContentLoaded", () => {
+            renderUserArea();
+            renderCartBadge();
+            montarResumo();
+            carregarEnderecos();
+            bindPagamento();
+            attachNumericMasks(); // aplica máscaras de cartão
+        });
+
+        function montarResumo() {
+            const box = document.getElementById("cartResume");
+            const totalEl = document.getElementById("sumTotal");
+            const items = getCart();
+            if (!items.length) {
+                box.innerHTML = '<div class="empty">Seu carrinho está vazio.</div>';
+                totalEl.textContent = "0,00";
+                document.getElementById("btnPagar").disabled = true;
+                return;
+            }
+            let total = 0;
+            box.innerHTML = items.map(i => {
+                const sub = (i.price || 0) * (i.qty || 0);
+                total += sub;
+                return `
+        <div class="sum-row">
+          <div><strong>${i.name}</strong><div class="mini">Qtd: ${i.qty}</div></div>
+          <div>R$ ${money(sub)}</div>
+        </div>
+      `;
+            }).join("");
+            totalEl.textContent = money(total);
+        }
+
+        async function carregarEnderecos() {
+            const box = document.getElementById("addrBox");
+            const endHidden = document.getElementById("endId");
+            try {
+                const resp = await fetch(`${API_BASE}/api/enderecos`, { headers: authHeaders() });
+                if (!resp.ok) throw 0;
+                const data = await resp.json();
+
+                if (!data.length) {
+                    box.innerHTML = '<div class="empty">Você ainda não cadastrou endereços. Adicione um em <strong>Usuário &gt; Endereços</strong>.</div>';
+                    endHidden.value = "";
+                    return;
+                }
+
+                // escolhe o principal; se não houver, usa o primeiro
+                const e = data.find(x => x.principal) || data[0];
+                endHidden.value = e.id;
+
+                // Mostra o endereço escolhido de forma limpa
+                box.innerHTML = `
+      <div class="pix-box" style="display:flex; gap:.75rem;">
+        <div style="flex:1">
+          <strong>${e.apelido || "Endereço"}</strong> ${e.principal ? '<span class="badge">Principal</span>' : ""}
+          <div class="mini">${e.logradouro}, ${e.numero}${e.complemento ? " - " + e.complemento : ""}</div>
+          <div class="mini">${e.bairro} - ${e.cidade}/${e.estado} • CEP ${e.cep}</div>
+        </div>
+      </div>
+    `;
+            } catch {
+                box.innerHTML = '<div class="empty">Falha ao carregar endereços.</div>';
+                endHidden.value = "";
+            }
+        }
+
+        function bindPagamento() {
+            const radios = document.querySelectorAll('input[name="metodo"]');
+            const pix = document.getElementById("pixFields");
+            const card = document.getElementById("cardFields");
+            radios.forEach(r => r.addEventListener("change", () => {
+                const m = document.querySelector('input[name="metodo"]:checked').value;
+                pix.style.display = (m === "pix") ? "" : "none";
+                card.style.display = (m === "cartao") ? "" : "none";
+            }));
+
+            document.getElementById("payForm").addEventListener("submit", concluirPagamento);
+        }
+
+        function attachNumericMasks() {
+            const num = document.getElementById("ccNum");
+            const cvv = document.getElementById("ccCvv");
+            const val = document.getElementById("ccVal");
+
+            // apenas dígitos (máx 19) para número do cartão
+            const onlyDigits = (el, max) => el.addEventListener("input", () => {
+                el.value = el.value.replace(/\D+/g, "").slice(0, max);
+            });
+            if (num) onlyDigits(num, 19);
+            if (cvv) onlyDigits(cvv, 4);
+
+            // validade no formato MM/AA
+            if (val) {
+                val.addEventListener("input", () => {
+                    let v = val.value.replace(/\D+/g, "").slice(0, 4);
+                    if (v.length >= 3) v = v.slice(0, 2) + "/" + v.slice(2);
+                    val.value = v;
+                });
+            }
+        }
+
+        async function concluirPagamento(e) {
+            e.preventDefault();
+            const form = document.getElementById("payForm");
+            const msg = document.getElementById("payMsg");
+
+            // validação HTML5 antes de enviar
+            if (!form.reportValidity()) {
+                msg.textContent = "Verifique os dados do cartão antes de continuar.";
+                return;
+            }
+
+            msg.textContent = "Processando...";
+
+            const metodo = document.querySelector('input[name="metodo"]:checked')?.value || "pix";
+            const endSel =
+                document.getElementById("endId")?.value ||
+                document.querySelector('input[name="end"]:checked')?.value ||
+                null;
+
+            const itens = getCart().map(i => ({
+                id: i.id, nome: i.name, preco: i.price, qty: i.qty, imagem: i.image
+            }));
+
+            const body = { itens, enderecoId: endSel ? Number(endSel) : null, metodo, cartao: null };
+
+            if (metodo === "cartao") {
+                body.cartao = {
+                    numero: (document.getElementById("ccNum").value || "").replace(/\s+/g, ""),
+                    nome: document.getElementById("ccNome").value || "",
+                    validade: document.getElementById("ccVal").value || "",
+                    cvv: document.getElementById("ccCvv").value || ""
+                };
+            }
+
+            const resp = await fetch(`${API_BASE}/api/checkout`, {
+                method: "POST",
+                headers: authHeaders(),
+                body: JSON.stringify(body)
+            });
+
+            if (!resp.ok) {
+                msg.textContent = (await resp.text().catch(() => "")) || "Não foi possível concluir o pagamento.";
+                return;
+            }
+
+            const data = await resp.json();
+
+            if (data.metodo === "cartao") {
+                if (data.statusPagamento === "Aprovado") {
+                    msg.textContent = `✅ Pedido #${data.pedidoId} aprovado! Cartão: ${data.cartaoFinal}`;
+                    saveCart([]);
+                    renderCartBadge();
+                    setTimeout(() => window.location.href = "index.html", 1400);
+                } else {
+                    msg.textContent = "❌ Pagamento recusado pelo emissor do cartão.";
+                }
+                return;
+            }
+
+            // PIX
+            const area = document.getElementById("pixReturn");
+            area.innerHTML = `
+    <div><strong>Código Pix:</strong> ${data.pixCode}</div>
+    <button id="btnCopy" class="auth-btn" style="width:auto; margin-top:.5rem;">Copiar</button>
+    <button id="btnConfirmPix" class="logout-danger" style="width:auto;">Simular pagamento (confirmar)</button>
+  `;
+
+            document.getElementById("btnCopy").onclick = async () => {
+                await navigator.clipboard.writeText(data.pixCode);
+            };
+
+            document.getElementById("btnConfirmPix").onclick = async () => {
+                const r = await fetch(`${API_BASE}/api/pagamentos/${data.pagamentoId}/confirm`, {
+                    method: "POST",
+                    headers: authHeaders()
+                });
+                if (r.ok) {
+                    msg.textContent = `✅ Pix confirmado! Pedido #${data.pedidoId} pago.`;
+                    saveCart([]);
+                    renderCartBadge();
+                    setTimeout(() => window.location.href = "index.html", 1400);
+                } else {
+                    msg.textContent = "Não foi possível confirmar o Pix.";
+                }
+            };
+
+            msg.textContent = "Aguardando pagamento via Pix.";
+        }
+    </script>
+</body>
+
+</html>
+```
+
+

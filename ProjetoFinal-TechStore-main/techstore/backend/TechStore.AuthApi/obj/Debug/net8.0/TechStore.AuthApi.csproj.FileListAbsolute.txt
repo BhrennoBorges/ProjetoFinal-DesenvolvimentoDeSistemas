@@ -1,0 +1,112 @@
+C:\Users\SYLLES\Projetos\techstore\backend\TechStore.AuthApi\obj\Debug\net8.0\TechStore.AuthApi.csproj.AssemblyReference.cache
+C:\Users\SYLLES\Projetos\techstore\backend\TechStore.AuthApi\obj\Debug\net8.0\TechStore.AuthApi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\SYLLES\Projetos\techstore\backend\TechStore.AuthApi\obj\Debug\net8.0\TechStore.AuthApi.AssemblyInfoInputs.cache
+C:\Users\SYLLES\Projetos\techstore\backend\TechStore.AuthApi\obj\Debug\net8.0\TechStore.AuthApi.AssemblyInfo.cs
+C:\Users\SYLLES\Projetos\techstore\backend\TechStore.AuthApi\obj\Debug\net8.0\TechStore.AuthApi.csproj.CoreCompileInputs.cache
+C:\Users\SYLLES\Projetos\techstore\backend\TechStore.AuthApi\obj\Debug\net8.0\TechStore.AuthApi.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\SYLLES\Projetos\techstore\backend\TechStore.AuthApi\obj\Debug\net8.0\TechStore.AuthApi.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\SYLLES\Projetos\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\SYLLES\Projetos\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\appsettings.json
+C:\Users\SYLLES\Projetos\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\TechStore.AuthApi.exe
+C:\Users\SYLLES\Projetos\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\TechStore.AuthApi.deps.json
+C:\Users\SYLLES\Projetos\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\TechStore.AuthApi.runtimeconfig.json
+C:\Users\SYLLES\Projetos\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\TechStore.AuthApi.dll
+C:\Users\SYLLES\Projetos\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\TechStore.AuthApi.pdb
+C:\Users\SYLLES\Projetos\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\BCrypt.Net-Next.dll
+C:\Users\SYLLES\Projetos\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\SYLLES\Projetos\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\SYLLES\Projetos\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\SYLLES\Projetos\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.InMemory.dll
+C:\Users\SYLLES\Projetos\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\SYLLES\Projetos\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\SYLLES\Projetos\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\SYLLES\Projetos\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+C:\Users\SYLLES\Projetos\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\SYLLES\Projetos\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\SYLLES\Projetos\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\SYLLES\Projetos\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\SYLLES\Projetos\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\SYLLES\Projetos\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\SYLLES\Projetos\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\SYLLES\Projetos\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\SYLLES\Projetos\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\SYLLES\Projetos\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\SYLLES\Projetos\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\SYLLES\Projetos\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\SYLLES\Projetos\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\SYLLES\Projetos\techstore\backend\TechStore.AuthApi\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\SYLLES\Projetos\techstore\backend\TechStore.AuthApi\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\SYLLES\Projetos\techstore\backend\TechStore.AuthApi\obj\Debug\net8.0\staticwebassets\msbuild.TechStore.AuthApi.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\SYLLES\Projetos\techstore\backend\TechStore.AuthApi\obj\Debug\net8.0\staticwebassets\msbuild.build.TechStore.AuthApi.props
+C:\Users\SYLLES\Projetos\techstore\backend\TechStore.AuthApi\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.TechStore.AuthApi.props
+C:\Users\SYLLES\Projetos\techstore\backend\TechStore.AuthApi\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.TechStore.AuthApi.props
+C:\Users\SYLLES\Projetos\techstore\backend\TechStore.AuthApi\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\SYLLES\Projetos\techstore\backend\TechStore.AuthApi\obj\Debug\net8.0\scopedcss\bundle\TechStore.AuthApi.styles.css
+C:\Users\SYLLES\Projetos\techstore\backend\TechStore.AuthApi\obj\Debug\net8.0\TechStor.EB3F4002.Up2Date
+C:\Users\SYLLES\Projetos\techstore\backend\TechStore.AuthApi\obj\Debug\net8.0\TechStore.AuthApi.dll
+C:\Users\SYLLES\Projetos\techstore\backend\TechStore.AuthApi\obj\Debug\net8.0\refint\TechStore.AuthApi.dll
+C:\Users\SYLLES\Projetos\techstore\backend\TechStore.AuthApi\obj\Debug\net8.0\TechStore.AuthApi.pdb
+C:\Users\SYLLES\Projetos\techstore\backend\TechStore.AuthApi\obj\Debug\net8.0\TechStore.AuthApi.genruntimeconfig.cache
+C:\Users\SYLLES\Projetos\techstore\backend\TechStore.AuthApi\obj\Debug\net8.0\ref\TechStore.AuthApi.dll
+C:\Users\SYLLES\Projetos\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\SYLLES\Projetos\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
+C:\Users\SYLLES\Projetos\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Bhrenno Borges\Downloads\techstore -files\ProjetoFinal-TechStore-main\ProjetoFinal-TechStore-main\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\Bhrenno Borges\Downloads\techstore -files\ProjetoFinal-TechStore-main\ProjetoFinal-TechStore-main\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\appsettings.json
+C:\Users\Bhrenno Borges\Downloads\techstore -files\ProjetoFinal-TechStore-main\ProjetoFinal-TechStore-main\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\TechStore.AuthApi.staticwebassets.endpoints.json
+C:\Users\Bhrenno Borges\Downloads\techstore -files\ProjetoFinal-TechStore-main\ProjetoFinal-TechStore-main\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\TechStore.AuthApi.exe
+C:\Users\Bhrenno Borges\Downloads\techstore -files\ProjetoFinal-TechStore-main\ProjetoFinal-TechStore-main\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\TechStore.AuthApi.deps.json
+C:\Users\Bhrenno Borges\Downloads\techstore -files\ProjetoFinal-TechStore-main\ProjetoFinal-TechStore-main\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\TechStore.AuthApi.runtimeconfig.json
+C:\Users\Bhrenno Borges\Downloads\techstore -files\ProjetoFinal-TechStore-main\ProjetoFinal-TechStore-main\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\TechStore.AuthApi.dll
+C:\Users\Bhrenno Borges\Downloads\techstore -files\ProjetoFinal-TechStore-main\ProjetoFinal-TechStore-main\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\TechStore.AuthApi.pdb
+C:\Users\Bhrenno Borges\Downloads\techstore -files\ProjetoFinal-TechStore-main\ProjetoFinal-TechStore-main\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\BCrypt.Net-Next.dll
+C:\Users\Bhrenno Borges\Downloads\techstore -files\ProjetoFinal-TechStore-main\ProjetoFinal-TechStore-main\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Bhrenno Borges\Downloads\techstore -files\ProjetoFinal-TechStore-main\ProjetoFinal-TechStore-main\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\Bhrenno Borges\Downloads\techstore -files\ProjetoFinal-TechStore-main\ProjetoFinal-TechStore-main\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Bhrenno Borges\Downloads\techstore -files\ProjetoFinal-TechStore-main\ProjetoFinal-TechStore-main\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.InMemory.dll
+C:\Users\Bhrenno Borges\Downloads\techstore -files\ProjetoFinal-TechStore-main\ProjetoFinal-TechStore-main\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Bhrenno Borges\Downloads\techstore -files\ProjetoFinal-TechStore-main\ProjetoFinal-TechStore-main\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\Bhrenno Borges\Downloads\techstore -files\ProjetoFinal-TechStore-main\ProjetoFinal-TechStore-main\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\Bhrenno Borges\Downloads\techstore -files\ProjetoFinal-TechStore-main\ProjetoFinal-TechStore-main\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Bhrenno Borges\Downloads\techstore -files\ProjetoFinal-TechStore-main\ProjetoFinal-TechStore-main\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Bhrenno Borges\Downloads\techstore -files\ProjetoFinal-TechStore-main\ProjetoFinal-TechStore-main\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Bhrenno Borges\Downloads\techstore -files\ProjetoFinal-TechStore-main\ProjetoFinal-TechStore-main\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+C:\Users\Bhrenno Borges\Downloads\techstore -files\ProjetoFinal-TechStore-main\ProjetoFinal-TechStore-main\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Bhrenno Borges\Downloads\techstore -files\ProjetoFinal-TechStore-main\ProjetoFinal-TechStore-main\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\Bhrenno Borges\Downloads\techstore -files\ProjetoFinal-TechStore-main\ProjetoFinal-TechStore-main\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
+C:\Users\Bhrenno Borges\Downloads\techstore -files\ProjetoFinal-TechStore-main\ProjetoFinal-TechStore-main\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\Bhrenno Borges\Downloads\techstore -files\ProjetoFinal-TechStore-main\ProjetoFinal-TechStore-main\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Bhrenno Borges\Downloads\techstore -files\ProjetoFinal-TechStore-main\ProjetoFinal-TechStore-main\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Bhrenno Borges\Downloads\techstore -files\ProjetoFinal-TechStore-main\ProjetoFinal-TechStore-main\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Bhrenno Borges\Downloads\techstore -files\ProjetoFinal-TechStore-main\ProjetoFinal-TechStore-main\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Bhrenno Borges\Downloads\techstore -files\ProjetoFinal-TechStore-main\ProjetoFinal-TechStore-main\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Bhrenno Borges\Downloads\techstore -files\ProjetoFinal-TechStore-main\ProjetoFinal-TechStore-main\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\Bhrenno Borges\Downloads\techstore -files\ProjetoFinal-TechStore-main\ProjetoFinal-TechStore-main\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\Npgsql.dll
+C:\Users\Bhrenno Borges\Downloads\techstore -files\ProjetoFinal-TechStore-main\ProjetoFinal-TechStore-main\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+C:\Users\Bhrenno Borges\Downloads\techstore -files\ProjetoFinal-TechStore-main\ProjetoFinal-TechStore-main\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Bhrenno Borges\Downloads\techstore -files\ProjetoFinal-TechStore-main\ProjetoFinal-TechStore-main\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Bhrenno Borges\Downloads\techstore -files\ProjetoFinal-TechStore-main\ProjetoFinal-TechStore-main\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Bhrenno Borges\Downloads\techstore -files\ProjetoFinal-TechStore-main\ProjetoFinal-TechStore-main\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Bhrenno Borges\Downloads\techstore -files\ProjetoFinal-TechStore-main\ProjetoFinal-TechStore-main\techstore\backend\TechStore.AuthApi\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Bhrenno Borges\Downloads\techstore -files\ProjetoFinal-TechStore-main\ProjetoFinal-TechStore-main\techstore\backend\TechStore.AuthApi\obj\Debug\net8.0\TechStore.AuthApi.csproj.AssemblyReference.cache
+C:\Users\Bhrenno Borges\Downloads\techstore -files\ProjetoFinal-TechStore-main\ProjetoFinal-TechStore-main\techstore\backend\TechStore.AuthApi\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\Bhrenno Borges\Downloads\techstore -files\ProjetoFinal-TechStore-main\ProjetoFinal-TechStore-main\techstore\backend\TechStore.AuthApi\obj\Debug\net8.0\TechStore.AuthApi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Bhrenno Borges\Downloads\techstore -files\ProjetoFinal-TechStore-main\ProjetoFinal-TechStore-main\techstore\backend\TechStore.AuthApi\obj\Debug\net8.0\TechStore.AuthApi.AssemblyInfoInputs.cache
+C:\Users\Bhrenno Borges\Downloads\techstore -files\ProjetoFinal-TechStore-main\ProjetoFinal-TechStore-main\techstore\backend\TechStore.AuthApi\obj\Debug\net8.0\TechStore.AuthApi.AssemblyInfo.cs
+C:\Users\Bhrenno Borges\Downloads\techstore -files\ProjetoFinal-TechStore-main\ProjetoFinal-TechStore-main\techstore\backend\TechStore.AuthApi\obj\Debug\net8.0\TechStore.AuthApi.csproj.CoreCompileInputs.cache
+C:\Users\Bhrenno Borges\Downloads\techstore -files\ProjetoFinal-TechStore-main\ProjetoFinal-TechStore-main\techstore\backend\TechStore.AuthApi\obj\Debug\net8.0\TechStore.AuthApi.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Bhrenno Borges\Downloads\techstore -files\ProjetoFinal-TechStore-main\ProjetoFinal-TechStore-main\techstore\backend\TechStore.AuthApi\obj\Debug\net8.0\TechStore.AuthApi.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Bhrenno Borges\Downloads\techstore -files\ProjetoFinal-TechStore-main\ProjetoFinal-TechStore-main\techstore\backend\TechStore.AuthApi\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\Users\Bhrenno Borges\Downloads\techstore -files\ProjetoFinal-TechStore-main\ProjetoFinal-TechStore-main\techstore\backend\TechStore.AuthApi\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\Users\Bhrenno Borges\Downloads\techstore -files\ProjetoFinal-TechStore-main\ProjetoFinal-TechStore-main\techstore\backend\TechStore.AuthApi\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+C:\Users\Bhrenno Borges\Downloads\techstore -files\ProjetoFinal-TechStore-main\ProjetoFinal-TechStore-main\techstore\backend\TechStore.AuthApi\obj\Debug\net8.0\scopedcss\bundle\TechStore.AuthApi.styles.css
+C:\Users\Bhrenno Borges\Downloads\techstore -files\ProjetoFinal-TechStore-main\ProjetoFinal-TechStore-main\techstore\backend\TechStore.AuthApi\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\Bhrenno Borges\Downloads\techstore -files\ProjetoFinal-TechStore-main\ProjetoFinal-TechStore-main\techstore\backend\TechStore.AuthApi\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\Users\Bhrenno Borges\Downloads\techstore -files\ProjetoFinal-TechStore-main\ProjetoFinal-TechStore-main\techstore\backend\TechStore.AuthApi\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\Bhrenno Borges\Downloads\techstore -files\ProjetoFinal-TechStore-main\ProjetoFinal-TechStore-main\techstore\backend\TechStore.AuthApi\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\Bhrenno Borges\Downloads\techstore -files\ProjetoFinal-TechStore-main\ProjetoFinal-TechStore-main\techstore\backend\TechStore.AuthApi\obj\Debug\net8.0\TechStor.EB3F4002.Up2Date
+C:\Users\Bhrenno Borges\Downloads\techstore -files\ProjetoFinal-TechStore-main\ProjetoFinal-TechStore-main\techstore\backend\TechStore.AuthApi\obj\Debug\net8.0\TechStore.AuthApi.dll
+C:\Users\Bhrenno Borges\Downloads\techstore -files\ProjetoFinal-TechStore-main\ProjetoFinal-TechStore-main\techstore\backend\TechStore.AuthApi\obj\Debug\net8.0\refint\TechStore.AuthApi.dll
+C:\Users\Bhrenno Borges\Downloads\techstore -files\ProjetoFinal-TechStore-main\ProjetoFinal-TechStore-main\techstore\backend\TechStore.AuthApi\obj\Debug\net8.0\TechStore.AuthApi.pdb
+C:\Users\Bhrenno Borges\Downloads\techstore -files\ProjetoFinal-TechStore-main\ProjetoFinal-TechStore-main\techstore\backend\TechStore.AuthApi\obj\Debug\net8.0\TechStore.AuthApi.genruntimeconfig.cache
+C:\Users\Bhrenno Borges\Downloads\techstore -files\ProjetoFinal-TechStore-main\ProjetoFinal-TechStore-main\techstore\backend\TechStore.AuthApi\obj\Debug\net8.0\ref\TechStore.AuthApi.dll

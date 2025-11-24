@@ -1,0 +1,27 @@
+@host = http://localhost:5159
+
+### Registrar
+POST {{host}}/api/auth/register
+Content-Type: application/json
+
+{
+  "nomeCompleto": "Joao Araujo",
+  "email": "joao99@gmail.com",
+  "cpf": "12345678909",
+  "telefone": "62995598855",
+  "numero": "73200000",
+  "bairro": "Rua alojieiro",
+  "cidade": "Ubatuba",
+  "estado": "SP",
+  "nomeUsuario": "joaoaraujo",
+  "senha": "Abcdefg1"
+}
+
+### Login
+POST {{host}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "joao99@gmail.com",
+  "senha": "Abcdefg1"
+}

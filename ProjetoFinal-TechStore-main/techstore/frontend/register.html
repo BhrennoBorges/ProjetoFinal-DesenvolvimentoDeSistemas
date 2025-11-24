@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Criar conta — TechStore</title>
+  <style>
+    .auth-page {
+      min-height: 100dvh;
+      display: grid;
+      place-items: start center;
+      padding: clamp(16px, 2vw, 24px)
+    }
+
+    .auth-wrapper {
+      width: min(1100px, 100%);
+      margin: 2rem auto;
+      background: #fff;
+      padding: clamp(1rem, 2vw, 2rem);
+      box-shadow: rgba(0, 0, 0, .1) 0 10px 20px
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+    }
+
+    .full {
+      grid-column: 1/-1
+    }
+
+    .auth-field {
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+    }
+
+    .auth-field input {
+      padding: .8rem;
+      border: 1px solid var(--border-color);
+      border-radius: .6rem
+    }
+
+    .auth-btn {
+      width: 100%;
+      padding: .9rem;
+      border: none;
+      border-radius: .8rem;
+      background: var(--accent-color);
+      color: #fff;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+
+    .auth-btn:hover {
+      opacity: .90;
+    }
+
+    .error {
+      color: #c0392b;
+      margin: .5rem 0
+    }
+
+    .ok {
+      color: #2e7d32;
+      margin: .5rem 0
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <i class="fa-solid fa-bolt"></i>
+      <h1>TechStore</h1>
+    </div>
+    <div id="user-area"></div>
+  </header>
+
+  <section class="auth-hero">
+    <h2>Criar conta</h2>
+    <p>Seja cliente TechStore e aproveite as melhores ofertas</p>
+  </section>
+
+  <main class="auth-shell">
+    <div class="auth-card">
+      <h3 class="auth-title">Cadastro</h3>
+
+      <div id="reg-msg" style="display:none;"></div>
+
+      <form id="reg-form" class="grid">
+
+        <div class="auth-field full">
+          <label>Nome Completo</label>
+          <input id="nome" required />
+        </div>
+
+
+        <div class="auth-field">
+          <label>E-mail</label>
+          <input id="email" type="email" required placeholder="ex: meuemail@gmail.com" />
+        </div>
+
+
+        <div class="auth-field">
+          <label>CPF</label>
+          <input id="cpf" required placeholder="somente números" pattern="\d{11}" />
+        </div>
+
+
+        <div class="auth-field">
+          <label>Telefone</label>
+          <input id="tel" required placeholder="61999999999" inputmode="numeric" pattern="^\d{10,11}$"
+            title="Somente números, com DDD (10 ou 11 dígitos)" />
+        </div>
+
+
+        <div class="auth-field">
+          <label>CEP</label>
+          <input id="cep" required placeholder="Apenas números" inputmode="numeric" pattern="^\d+$"
+            title="Digite apenas números" />
+        </div>
+
+
+        <div class="auth-field">
+          <label>Bairro</label>
+          <input id="bairro" required />
+        </div>
+
+
+        <div class="auth-field">
+          <label>Cidade</label>
+          <input id="cidade" required />
+        </div>
+
+
+        <div class="auth-field">
+          <label>Estado (UF)</label>
+          <input id="estado" required maxlength="2" />
+        </div>
+
+
+        <div class="auth-field">
+          <label>Nome de usuário</label>
+          <input id="username" required minlength="3" pattern="^[a-zA-Z0-9._-]{3,20}$"
+            title="3–20 caracteres: letras, números, ponto, _ ou -" />
+        </div>
+
+
+        <div class="auth-field full" style="position:relative;">
+          <label>Senha</label>
+          <input id="senha" type="password" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$"
+            title="Mínimo 8 caracteres, com uma letra maiúscula, uma letra minúscula e um número" />
+          <button type="button" id="toggleRegPwd" class="pw-toggle" aria-label="Mostrar senha">
+            <i class="fa-solid fa-eye"></i>
+          </button>
+          <ul class="pw-checklist" id="pw-list-reg" aria-live="polite">
+            <li data-check="len">• No mínimo 8 caracteres</li>
+            <li data-check="upper">• No mínimo 1 letra maiúscula</li>
+            <li data-check="lower">• No mínimo 1 letra minúscula</li>
+            <li data-check="digit">• No mínimo 1 número</li>
+          </ul>
+        </div>
+
+
+        <button class="auth-btn full" id="btnCadastrar" type="submit">Cadastrar</button>
+      </form>
+
+
+      <p style="margin-top:1rem;">Já tem conta? <a href="login.html">Entrar</a></p>
+    </div>
+  </main>
+
+  <footer>
+    <p>2025 - TechStore. Todos os Direitos Reservados</p>
+  </footer>
+
+
+  <script src="auth.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      Auth.init({
+        apiBase: "http://localhost:5159",
+        routes: {
+          login: "/api/auth/login",
+          register: "/api/auth/register",
+        }
+      });
+
+
+      const regPwd = document.getElementById("senha");
+      const regList = document.getElementById("pw-list-reg");
+      const regBtn = document.getElementById("btnCadastrar");
+
+      const tests = {
+        len: (v) => v.length >= 8,
+        upper: (v) => /[A-Z]/.test(v),
+        lower: (v) => /[a-z]/.test(v),
+        digit: (v) => /\d/.test(v),
+      };
+
+      function renderChecklist(listEl, value) {
+        Array.from(listEl.querySelectorAll("li")).forEach(li => {
+          const k = li.getAttribute("data-check");
+          li.classList.toggle("ok", tests[k](value));
+        });
+      }
+
+      regPwd.addEventListener("input", () => {
+        const v = regPwd.value || "";
+        renderChecklist(regList, v);
+        const valid = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/.test(v);
+        if (regBtn) regBtn.disabled = !valid;
+      });
+      regPwd.dispatchEvent(new Event("input"));
+
+      // --- Envio do formulário ---
+      document.getElementById("reg-form").addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const cepDigits = (document.getElementById("cep").value || "").replace(/\D/g, "");
+
+        const body = {
+          nomeCompleto: document.getElementById("nome").value.trim(),
+          email: document.getElementById("email").value.trim(),
+          cpf: document.getElementById("cpf").value.trim(),
+          telefone: document.getElementById("tel").value.trim(),
+          numero: cepDigits,
+          bairro: document.getElementById("bairro").value.trim(),
+          cidade: document.getElementById("cidade").value.trim(),
+          estado: document.getElementById("estado").value.trim(),
+          nomeUsuario: document.getElementById("username").value.trim(), // <--- NOVO
+          senha: document.getElementById("senha").value
+        };
+
+
+        const msg = document.getElementById("reg-msg");
+        msg.style.display = "block";
+
+        try {
+          const ok = await Auth.register(body);  
+          if (ok) {
+            msg.className = "ok";
+            msg.textContent = "Cadastro realizado! Você já pode entrar.";
+            window.location.href = "login.html"; 
+          } else {
+            msg.className = "error";
+            msg.textContent = "Não foi possível cadastrar.";
+          }
+        } catch (err) {
+          msg.className = "error";
+          msg.textContent = "Erro ao conectar ao servidor.";
+          console.error(err);
+        }
+      });
+    });
+
+    // --- Toggle olho (registro) ---
+    (function () {
+      const input = document.getElementById("senha");
+      const btn = document.getElementById("toggleRegPwd");
+      if (!input || !btn) return;
+
+      btn.addEventListener("click", () => {
+        const showing = input.type === "text";
+        input.type = showing ? "password" : "text";
+        btn.setAttribute("aria-label", showing ? "Mostrar senha" : "Ocultar senha");
+
+        const icon = btn.querySelector("i");
+        if (icon) {
+          icon.classList.toggle("fa-eye", showing);       // olho aberto quando senha está OCULTA
+          icon.classList.toggle("fa-eye-slash", !showing); // olho fechado quando senha está VISÍVEL
+        }
+      });
+    })();
+  </script>
+</body>
+
+</html>

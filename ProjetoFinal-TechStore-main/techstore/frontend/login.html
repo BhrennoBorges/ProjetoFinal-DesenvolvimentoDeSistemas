@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Entrar — TechStore</title>
+    <style>
+        .auth-wrapper {
+            max-width: 420px;
+            margin: 4rem auto;
+            background: #fff;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: rgba(0, 0, 0, .1) 0 10px 20px
+        }
+
+        .auth-title {
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .auth-field {
+            display: flex;
+            flex-direction: column;
+            gap: .4rem;
+            margin: .8rem 0
+        }
+
+        .auth-field input {
+            padding: .8rem;
+            border: 1px solid var(--border-color);
+            border-radius: .6rem
+        }
+
+        .auth-btn {
+            width: 100%;
+            padding: .9rem;
+            border: none;
+            border-radius: .8rem;
+            background: var(--accent-color);
+            color: #fff;
+            font-weight: 700;
+            cursor: pointer
+        }
+
+        .auth-btn:hover {
+            opacity: .95;
+        }
+
+        .auth-link {
+            margin-top: 1rem;
+            text-align: center
+        }
+
+        .error {
+            color: #c0392b;
+            margin: .5rem 0
+        }
+    </style>
+</head>
+
+<body class="page-login">
+    <header>
+        <div class="logo">
+            <i class="fa-solid fa-bolt"></i>
+            <h1>TechStore</h1>
+        </div>
+        <div id="user-area"></div>
+    </header>
+
+
+    <section class="auth-hero">
+        <h2>Entrar</h2>
+        <p>Acesse sua conta para continuar</p>
+    </section>
+
+    <main class="auth-shell">
+        <div class="auth-card">
+            <h3 class="auth-title">Faça login na TechStore</h3>
+
+            <div id="login-error" class="error" style="display:none"></div>
+
+            <form id="login-form" class="grid">
+                <div class="auth-field full">
+                    <label for="email">E-mail</label>
+                    <input id="email" type="email" required placeholder="ex: seuemail@gmail.com" />
+                </div>
+
+                <div class="auth-field full" style="position:relative;">
+                    <label for="senha">Senha</label>
+                    <input id="senha" type="password" required placeholder="Digite sua senha"
+                        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$" />
+                    <button type="button" id="toggleLoginPwd" class="pw-toggle" aria-label="Mostrar senha">
+                        <i class="fa-solid fa-eye"></i>
+                    </button>
+                    <ul class="pw-checklist" id="pw-list-login" aria-live="polite">
+                        <li data-check="len">• Pelo menos 8 caracteres</li>
+                        <li data-check="upper">• Pelo menos 1 letra maiúscula (A–Z)</li>
+                        <li data-check="lower">• Pelo menos 1 letra minúscula (a–z)</li>
+                        <li data-check="digit">• Pelo menos 1 número (0–9)</li>
+                    </ul>
+                </div>
+
+                <div class="auth-actions full">
+                    <button id="btnEntrar" class="auth-btn" type="submit">Entrar</button>
+                </div>
+            </form>
+
+            <p class="auth-link" style="margin-top:1rem">
+                Ainda não tem conta? <a href="register.html">Crie sua conta</a>
+            </p>
+        </div>
+    </main>
+
+    <footer>
+        <p>2025 - TechStore. Todos os Direitos Reservados</p>
+    </footer>
+
+    <script src="auth.js"></script>
+    <script>
+        Auth.init({
+            apiBase: "http://localhost:5159",
+            routes: {
+                login: "/api/auth/login",
+                register: "/api/auth/register",
+            }
+        });
+
+        const loginPwd = document.getElementById("senha");
+        const loginList = document.getElementById("pw-list-login");
+        const loginBtn = document.getElementById("btnEntrar");
+
+        const tests = {
+            len: (v) => v.length >= 8,
+            upper: (v) => /[A-Z]/.test(v),
+            lower: (v) => /[a-z]/.test(v),
+            digit: (v) => /\d/.test(v),
+        };
+
+        function renderChecklist(listEl, value) {
+            Array.from(listEl.querySelectorAll("li")).forEach(li => {
+                const k = li.getAttribute("data-check");
+                li.classList.toggle("ok", tests[k](value));
+            });
+        }
+
+        loginPwd.addEventListener("input", () => {
+            const v = loginPwd.value || "";
+            renderChecklist(loginList, v);
+            const valid = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/.test(v);
+            loginBtn.disabled = !valid;
+        });
+        loginPwd.dispatchEvent(new Event("input"));
+
+        document.getElementById("login-form").addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const email = (document.getElementById("email").value || "").trim();
+            const senha = loginPwd.value || "";
+            const ok = await Auth.login(email, senha);
+            if (ok) { window.location.href = "index.html"; }
+            else {
+                const box = document.getElementById("login-error");
+                box.textContent = "E-mail ou senha inválidos.";
+                box.style.display = "block";
+            }
+        });
+
+        (function () {
+            const input = document.getElementById("senha");
+            const btn = document.getElementById("toggleLoginPwd");
+            if (!input || !btn) return;
+
+            btn.addEventListener("click", () => {
+                const showing = input.type === "text";
+                input.type = showing ? "password" : "text";
+                btn.setAttribute("aria-label", showing ? "Mostrar senha" : "Ocultar senha");
+
+                const icon = btn.querySelector("i");
+                if (icon) {
+                    icon.classList.toggle("fa-eye", showing);
+                    icon.classList.toggle("fa-eye-slash", !showing);
+                }
+            });
+        })();
+
+
+    </script>
+</body>
+
+</html>
