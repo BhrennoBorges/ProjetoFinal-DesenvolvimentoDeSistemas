@@ -146,7 +146,7 @@ Application started. Press Ctrl+C to shut down.
 
 ### 🔐 Credenciais do Adminer:
 - **Sistema:** PostgreSQL
-- **Servidor:** 172.18.0.2 ou localhost
+- **Servidor:** 172.18.0.2 ou localhost ou techstore-db
 - **Usuário:** techstore
 - **Senha:** techstore_pwd
 - **Base de dados:** techstore_db
