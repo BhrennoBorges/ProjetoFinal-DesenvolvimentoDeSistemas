@@ -97,59 +97,88 @@ Integração com API utilizando `fetch()` + JWT armazenado no `localStorage`.
 
 ## ▶️ Como Executar o Projeto
 
-### 1️⃣ Subir o Banco de Dados
+### 📋 Comandos para Rodar no Dia da Apresentação
 
-O arquivo está dentro da pasta **frontend**:
+#### 1️⃣ Navegue até o diretório do projeto:
+```powershell
+cd "c:\Users\Bhrenno Borges\testDia08\ProjetoFinal-DesenvolvimentoDeSistemas\ProjetoFinal-TechStore-main\techstore"
+```
 
-```bash
-cd frontend
-docker compose up -d
-Isso inicia:
+#### 2️⃣ Inicie o Docker (banco de dados):
+```powershell
+docker-compose up -d
+```
+Espere a mensagem confirmando que os containers iniciaram.
 
-PostgreSQL (5432)
+#### 3️⃣ Verifique se o Docker está rodando:
+```powershell
+docker ps
+```
+Deve aparecer:
+- `techstore-db` (PostgreSQL)
+- `techstore-adminer` (Interface do banco)
 
-Adminer (8080)
+#### 4️⃣ Abra novo terminal e navegue até o backend:
+```powershell
+cd "c:\Users\Bhrenno Borges\testDia08\ProjetoFinal-DesenvolvimentoDeSistemas\ProjetoFinal-TechStore-main\techstore\backend\TechStore.AuthApi"
+```
 
-2️⃣ Iniciar a API
-bash
-Copiar código
-cd ../backend/TechStore.AuthApi
+#### 5️⃣ Inicie a aplicação .NET:
+```powershell
 dotnet run
-API em:
+```
 
-arduino
-Copiar código
-http://localhost:5159
-3️⃣ Fluxo de Autenticação
-Registro
-arduino
-Copiar código
-POST /api/auth/register
-Login
-bash
-Copiar código
-POST /api/auth/login
-Retorno esperado:
+Espere aparecer:
+```
+Now listening on: http://localhost:5159
+Application started. Press Ctrl+C to shut down.
+```
 
-json
-Copiar código
-{
-  "token": "xxxxx.yyyyy.zzzzz",
-  "nomeCompleto": "...",
-  "email": "..."
-}
-4️⃣ Executar o Frontend
-Abra:
+---
 
-frontend/index.html
+### ✅ Pronto! Você terá acesso a:
 
-frontend/login.html
+| Serviço | URL | Uso |
+|---------|-----|-----|
+| **Swagger** | http://localhost:5159/swagger | Testar APIs |
+| **Adminer** | http://localhost:8080 | Visualizar banco de dados |
+| **Frontend** | frontend/index.html | Abrir no navegador |
 
-frontend/register.html
+### 🔐 Credenciais do Adminer:
+- **Sistema:** PostgreSQL
+- **Servidor:** 172.18.0.2 ou localhost
+- **Usuário:** techstore
+- **Senha:** techstore_pwd
+- **Base de dados:** techstore_db
 
-frontend/checkout.html
+---
 
-Ou use Live Server no VS Code.
+### 🧪 Fluxo de Testes:
+
+#### Via Swagger:
+1. **POST /api/auth/register** – Cadastre um novo usuário
+2. **POST /api/auth/login** – Faça login e copie o token
+3. **Clique em "Authorize"** – Cole: `Bearer {seu_token}`
+4. **GET /api/enderecos** – Acesse recurso protegido
+
+#### Via Frontend:
+1. Abra `register.html` → Cadastre usuário
+2. Abra `login.html` → Faça login
+3. Veja o token salvo em: F12 → Application → Local Storage
+
+#### Via Adminer:
+1. Acesse http://localhost:8080
+2. Login com credenciais acima
+3. Veja as tabelas `clientes` e `enderecos` populadas
+
+---
+
+### 🛑 Para parar tudo:
+```powershell
+# Terminal do backend: Ctrl+C
+# Terminal do Docker:
+docker-compose down
+```
 
 🧪 Evidências da Aplicação
 As evidências demonstram:
