@@ -206,3 +206,23 @@ TechStore_Evidencias_Frontend.pdf
 ✔ JWT funcionando
 ✔ Frontend integrado
 ✔ Evidências conforme solicitado
+
+JSON para testes:
+
+{
+  "nomeCompleto": "João da Silva",
+  "email": "joao.silva@email.com",
+  "cpf": "12345678909",
+  "telefone": "61999998888",
+  "nomeUsuario": "joaosilva",
+  "senha": "SenhaForte123",
+  "apelido": "joao",
+  "cep": "70040010",
+  "logradouro": "Setor Comercial Sul",
+  "numero": "100",
+  "complemento": "Bloco A",
+  "bairro": "Asa Sul",
+  "cidade": "Brasília",
+  "estado": "DF"
+}
+
